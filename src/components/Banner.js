@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/teacher.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Banner = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState('');
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const [index, setIndex] = useState(1);
-  const toRotate = [ "Web Developer", "Web Designer", "UI/UX Designer" ];
+  const {0:loopNum, 1:setLoopNum} = useState(0);
+  const {0:isDeleting, 1:setIsDeleting} = useState(false);
+  const {0:text, 1:setText} = useState('');
+  const {0:delta, 1:setDelta} = useState(300 - Math.random() * 100);
+  const {0:index, 1:setIndex} = useState(1);
+  const toRotate = [ "Учитель", "Репетитор", "Друг" ];
   const period = 2000;
 
   useEffect(() => {
@@ -55,10 +55,10 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Judy`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                <span className="tagline">Cайт учителя по математике</span>
+                <h1>{`Привет! Я Джуди`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Учитель", "Репетитор", "Друг" ]'><span className="wrap">{text}</span></span></h1>
+                  <p>Добро пожаловать на мою персональную страницу! Я, Джуди, являюсь преподавателем с многолетним опытом работы в области образования. Этот сайт создан для того, чтобы мои ученики, их родители и коллеги могли легко узнавать актуальную информацию, вдохновляться и сотрудничать.</p>
+                  <button onClick={() => console.log('connect')}>Связаться <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
           </Col>
